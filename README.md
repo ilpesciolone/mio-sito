@@ -4,66 +4,76 @@
     <meta charset="UTF-8">
     <title>Capolavoro</title>
   <style>
-        body {
-            background: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            perspective: 2000px;
-        }
+    body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #121212;
+        overflow-x: hidden;
+        perspective: 2000px;
+    }
 
-   .book {
-            position: relative;
-            width: 400px; 
-            height: 550px; 
-            transform-style: preserve-3d;
-        }
+    .book {
+        position: relative;
+        width: 90vw; 
+        max-width: 400px; 
+        height: 70vh; 
+        max-height: 550px; 
+        transform-style: preserve-3d;
+    }
+
     .page {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transform-origin: left;
-            transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-            cursor: pointer;
-        }
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-origin: left;
+        transform-style: preserve-3d;
+        transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        cursor: pointer;
+    }
 
-  .front, .back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            overflow: hidden;
-        }
-        
-   .front img, .back img {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-     .unita-img {
-            width: 800px !important;
-            max-width: none;
-            position: absolute;
-            height: 100%;
-        }
+    .front, .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        overflow: hidden;
+        box-shadow: inset 3px 0 10px rgba(0,0,0,0.2);
+    }
+
+    .front img, .back img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+
+    .unita-img {
+        width: 200% !important; 
+        max-width: none;
+        position: absolute;
+        height: 100%;
+    }
+
     .back {
-            transform: rotateY(180deg);
-            background-color: #d2bc91; 
-        }
+        transform: rotateY(180deg);
+        background-color: #d2bc91; 
+    }
+
     .flipped {
-            transform: rotateY(-180deg);
-        }
+        transform: rotateY(-180deg);
+    }
+
     .page-base {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            overflow: hidden;
-        }
-    </style>
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+    }
+</style>
 </head>
 <body>
 
